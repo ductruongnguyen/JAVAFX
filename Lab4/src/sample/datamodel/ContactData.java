@@ -19,10 +19,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
-
 public class ContactData {
 
-    private static final String CONTACTS_FILE = "contacts.xml";
+    private static final String CONTACTS_FILE = "Lab4/contacts.xml";
 
     private static final String CONTACT = "contact";
     private static final String FIRST_NAME = "first_name";

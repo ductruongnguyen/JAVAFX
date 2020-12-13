@@ -3,7 +3,6 @@ package bussiness;
 import com.entity.Client;
 import com.entity.Server;
 import controller.ServerBoxController;
-import javafx.collections.FXCollections;
 
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -38,7 +37,7 @@ public class ServerThread extends Thread {
                     String x = username.substring(username.indexOf(":") + 1);
                     c.setUsername(x);
                     c.setSocket(socket);
-                    ServerBoxController.clients.setItems(FXCollections.observableArrayList(c));
+                    ServerBoxController.lstClients.add(c);
                     ClientHandler ch = new ClientHandler(socket, c);
                     clients.put(x, ch);
                 }

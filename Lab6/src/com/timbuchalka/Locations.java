@@ -3,16 +3,13 @@ package com.timbuchalka;
 import java.io.*;
 import java.util.*;
 
-/**
- * Created by timbuchalka on 2/04/2016.
- */
 public class Locations implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new LinkedHashMap<Integer, Location>();
 
     public static void main(String[] args) throws IOException {
 
-        try(BufferedWriter locFile = new BufferedWriter(new FileWriter("locations.txt"));
-            BufferedWriter dirFile = new BufferedWriter(new FileWriter("directions.txt"))) {
+        try(BufferedWriter locFile = new BufferedWriter(new FileWriter("Lab6/locations.txt"));
+            BufferedWriter dirFile = new BufferedWriter(new FileWriter("Lab6/directions.txt"))) {
             for(Location location : locations.values()) {
                 locFile.write(location.getLocationID() + "," + location.getDescription() + "\n");
                 for(String direction : location.getExits().keySet()) {
@@ -26,7 +23,7 @@ public class Locations implements Map<Integer, Location> {
 
     static {
 
-        try(Scanner scanner = new Scanner(new BufferedReader(new FileReader("locations_big.txt")))) {
+        try(Scanner scanner = new Scanner(new BufferedReader(new FileReader("Lab6/locations_big.txt")))) {
             scanner.useDelimiter(",");
             while(scanner.hasNextLine()) {
                 int loc = scanner.nextInt();
@@ -42,7 +39,7 @@ public class Locations implements Map<Integer, Location> {
         }
 
         // Now read the exits
-        try (BufferedReader dirFile = new BufferedReader(new FileReader("directions_big.txt"))) {
+        try (BufferedReader dirFile = new BufferedReader(new FileReader("Lab6/directions_big.txt"))) {
             String input;
             while((input = dirFile.readLine()) != null) {
                 String[] data = input.split(",");

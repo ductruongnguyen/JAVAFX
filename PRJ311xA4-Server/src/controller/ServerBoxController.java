@@ -9,10 +9,22 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ServerBoxController {
 
+    public static List<Client> lstClients = new ArrayList<>();
+
     @FXML
-    public static ListView<Client> clients;
+    private ListView<Client> clients = new ListView<Client>();
+
+    @FXML
+    void initialize() {
+        for(Client client : lstClients) {
+            clients.getItems().add(client);
+        }
+    }
 
     public void lstClientMouseClicked(MouseEvent evt) {
         try {

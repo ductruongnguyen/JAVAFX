@@ -16,12 +16,18 @@
 	<first_name>Louise</first_name>
 	<last_name>Richter</last_name>
 	<phone_number>1290</phone_number>
-	<notes></notes>
+	<notes>Hello Motto</notes>
 </contact>
 <contact>
 	<first_name>Zayn</first_name>
 	<last_name>Jones</last_name>
 	<phone_number>6321</phone_number>
 	<notes>more notes here.</notes>
+</contact>
+<contact>
+	<first_name>Truong</first_name>
+	<last_name>Nguyen</last_name>
+	<phone_number>094891919</phone_number>
+	<notes>hahaha</notes>
 </contact>
 </contacts>

@@ -53,8 +53,6 @@ public class Controller {
             Contact newContact = contactController.getNewContact();
             data.addContact(newContact);
             data.saveContacts();
-
-
         }
     }
 }
