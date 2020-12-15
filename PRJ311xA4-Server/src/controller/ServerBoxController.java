@@ -1,6 +1,8 @@
 package controller;
 
 import com.entity.Client;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,21 +11,20 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ServerBoxController {
 
-    public static List<Client> lstClients = new ArrayList<>();
+    public static ObservableList<Client> lstClients = FXCollections.observableArrayList();
 
+    public ListView<Client> clients = new ListView<Client>();
+    
     @FXML
-    private ListView<Client> clients = new ListView<Client>();
+    void start() {
+
+    }
 
     @FXML
     void initialize() {
-        for(Client client : lstClients) {
-            clients.getItems().add(client);
-        }
+        clients.setItems(lstClients);
     }
 
     public void lstClientMouseClicked(MouseEvent evt) {
