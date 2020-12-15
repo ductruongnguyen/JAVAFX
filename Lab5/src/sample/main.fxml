@@ -52,6 +52,11 @@
                         <PropertyValueFactory property="notes"/>
                     </cellValueFactory>
                 </TableColumn>
+                <TableColumn text="Address">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="address"/>
+                    </cellValueFactory>
+                </TableColumn>
             </columns>
         </TableView>
     </center>

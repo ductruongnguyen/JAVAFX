@@ -21,13 +21,17 @@ public class ContactController {
     @FXML
     private TextField notesField;
 
+    @FXML
+    private TextField addressFiled;
+
     public Contact getNewContact() {
         String firstName = firstNameField.getText();
         String lastName = lastNameField.getText();
         String phoneNumber = phoneNumberField.getText();
         String notes = notesField.getText();
+        String address = addressFiled.getText();
 
-        Contact newContact = new Contact(firstName, lastName, phoneNumber, notes);
+        Contact newContact = new Contact(firstName, lastName, phoneNumber, notes, address);
         return newContact;
     }
 

@@ -29,6 +29,7 @@ public class ContactData {
     private static final String LAST_NAME = "last_name";
     private static final String PHONE_NUMBER = "phone_number";
     private static final String NOTES = "notes";
+    private static final String ADDRESS = "address";
 
     private ObservableList<Contact> contacts;
 
@@ -95,6 +96,13 @@ public class ContactData {
                             .equals(NOTES)) {
                         event = eventReader.nextEvent();
                         contact.setNotes(event.asCharacters().getData());
+                        continue;
+                    }
+
+                    if (event.asStartElement().getName().getLocalPart()
+                            .equals(ADDRESS)) {
+                        event = eventReader.nextEvent();
+                        contact.setAddress(event.asCharacters().getData());
                         continue;
                     }
                 }

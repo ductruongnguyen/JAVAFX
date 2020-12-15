@@ -5,11 +5,13 @@
 	<last_name>Buchalka</last_name>
 	<phone_number>1234</phone_number>
 	<notes>A few of them</notes>
+	<address>Ha Noi</address>
 </contact>
 <contact>
 	<first_name>Louise</first_name>
 	<last_name>Richter</last_name>
 	<phone_number>1290</phone_number>
 	<notes>Some notes</notes>
+	<address>Ha Noi</address>
 </contact>
 </contacts>

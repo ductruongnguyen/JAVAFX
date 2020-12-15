@@ -7,15 +7,29 @@ public class Contact {
     private SimpleStringProperty lastName = new SimpleStringProperty("");
     private SimpleStringProperty phoneNumber = new SimpleStringProperty("");
     private SimpleStringProperty notes = new SimpleStringProperty("");
+    private SimpleStringProperty address = new SimpleStringProperty("");
 
     public Contact() {
     }
 
-    public Contact(String firstName, String lastName, String phoneNumber, String notes) {
+    public Contact(String firstName, String lastName, String phoneNumber, String notes, String address) {
         this.firstName.set(firstName);
         this.lastName.set(lastName);
         this.phoneNumber.set(phoneNumber);
         this.notes.set(notes);
+        this.address.set(address);
+    }
+
+    public String getAddress() {
+        return address.get();
+    }
+
+    public SimpleStringProperty addressProperty() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address.set(address);
     }
 
     public String getFirstName() {
