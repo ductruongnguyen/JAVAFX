@@ -7,23 +7,38 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 public class ServerBoxController {
 
     public static ObservableList<Client> lstClients = FXCollections.observableArrayList();
 
-    public ListView<Client> clients = new ListView<Client>();
-    
     @FXML
-    void start() {
-
-    }
+    public ListView<Client> clients = new ListView<Client>();
 
     @FXML
     void initialize() {
+        clients.setCellFactory(new Callback<ListView<Client>, ListCell<Client>>() {
+            @Override
+            public ListCell<Client> call(ListView<Client> param) {
+                ListCell<Client> cell = new ListCell<Client>() {
+                    @Override
+                    protected void updateItem(Client item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if(item != null) {
+                            setText(item.getUsername());
+                        } else {
+                            setText("");
+                        }
+                    }
+                };
+                return cell;
+            }
+        });
         clients.setItems(lstClients);
     }
 
@@ -34,7 +49,7 @@ public class ServerBoxController {
                 Parent root = loader.load();
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));
-                String clientName = (((Client) clients.getSelectionModel().getSelectedItems()).getUsername());
+                String clientName = (((Client) clients.getSelectionModel().getSelectedItem()).getUsername());
                 stage.setTitle("Chat with: " + clientName);
                 stage.show();
 
