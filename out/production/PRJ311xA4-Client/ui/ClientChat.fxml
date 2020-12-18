@@ -9,7 +9,8 @@
     <center>
         <AnchorPane prefHeight="400.0" prefWidth="600.0">
             <children>
-                <TextArea fx:id="txtContent" layoutX="1.0" layoutY="1.0" prefHeight="268.0" prefWidth="447.0" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="0.0" />
+                <TextArea fx:id="txtContent" layoutX="1.0" layoutY="1.0" prefHeight="268.0" prefWidth="447.0"
+                          AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="0.0" editable="false"/>
             </children>
         </AnchorPane>
     </center>
@@ -35,7 +36,7 @@
                 <FlowPane hgap="8.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                     <children>
                         <Label text="Username" />
-                        <TextField fx:id="txtUsername" prefHeight="26.0" prefWidth="152.0" text="Truong" />
+                        <TextField fx:id="txtUsername" prefHeight="26.0" prefWidth="152.0" text="Truong" onAction="#onEnterConnect"/>
                         <Button fx:id="btnConnect" mnemonicParsing="false" onAction="#btnConnectActionPerformed" text="Connect" />
                     </children>
                 </FlowPane>
@@ -45,7 +46,7 @@
     <bottom>
         <FlowPane hgap="10.0" prefHeight="83.0" prefWidth="459.0" vgap="10.0" BorderPane.alignment="CENTER">
             <children>
-                <TextField fx:id="txtMessage" prefHeight="27.0" prefWidth="393.0" />
+                <TextField fx:id="txtMessage" prefHeight="27.0" prefWidth="393.0" onAction="#onEnter" />
                 <Button fx:id="btnSend" mnemonicParsing="false" onAction="#btnSendActionPerformed" text="Send" />
             </children>
         </FlowPane>

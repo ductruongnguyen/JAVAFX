@@ -32,4 +32,9 @@ public class ChatBoxController {
             System.out.println(ex);
         }
     }
+
+    @FXML
+    public void onEnter(ActionEvent actionEvent) {
+        btnSendActionPerformed(actionEvent);
+    }
 }
