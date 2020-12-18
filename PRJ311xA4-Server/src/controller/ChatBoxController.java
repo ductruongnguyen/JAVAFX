@@ -4,7 +4,6 @@ import bussiness.ClientHandler;
 import bussiness.ServerThread;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
@@ -28,6 +27,7 @@ public class ChatBoxController {
     public void btnSendActionPerformed(ActionEvent evt) {
         try {
             cs.send(txtMessage.getText());
+            txtMessage.clear();
         } catch (Exception ex) {
             System.out.println(ex);
         }

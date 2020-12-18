@@ -40,6 +40,7 @@ public class ClientChatController {
     public void btnSendActionPerformed(ActionEvent actionEvent) {
         try {
             clientThread.send(txtMessage.getText());
+            txtMessage.clear();
         } catch (Exception ex) {
             ex.printStackTrace();
         }

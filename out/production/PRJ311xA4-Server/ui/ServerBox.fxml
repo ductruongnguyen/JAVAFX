@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ListView?>
+<HBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.ServerBoxController">
+    <children>
+        <ListView fx:id="clients" prefWidth="155.0" prefHeight="216.0" onMouseClicked="#lstClientMouseClicked"/>
+    </children>
+</HBox>

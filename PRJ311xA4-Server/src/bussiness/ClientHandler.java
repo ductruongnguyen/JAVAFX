@@ -1,7 +1,6 @@
 package bussiness;
 
 import com.entity.Client;
-import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 
 import java.io.DataInputStream;
@@ -33,7 +32,7 @@ public class ClientHandler extends Thread {
             while (true) {
                 Object line = dis.readUTF();
                 if (line != null) {
-                    txtContent.appendText("\n" + client.getUsername() + ":" + line);
+                    txtContent.appendText("\n" + client.getUsername() + ": " + line);
                 }
             }
         } catch (Exception ex) {
@@ -43,6 +42,6 @@ public class ClientHandler extends Thread {
 
     public void send(Object line) throws Exception {
         dos.writeUTF(line.toString());
-        txtContent.appendText("\nMe" + line);
+        txtContent.appendText("\nMe: " + line);
     }
 }

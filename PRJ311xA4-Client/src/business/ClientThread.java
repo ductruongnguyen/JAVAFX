@@ -75,7 +75,7 @@ public class ClientThread implements Runnable, Serializable {
             while (true) {
                 Object line = dis.readUTF();
                 if(line != null) {
-                    txtContent.appendText("\n" + server.getHost() + ":" + line);
+                    txtContent.appendText("\n" + server.getHost() + ": " + line);
                 }
             }
         } catch (Exception ex) {
@@ -86,7 +86,7 @@ public class ClientThread implements Runnable, Serializable {
     public void send(Object line) throws Exception {
         dos.writeUTF(line.toString());
         if(!line.toString().startsWith(":"))
-            txtContent.appendText("\nMe:" + line);
+            txtContent.appendText("\nMe: " + line);
     }
 
 }
